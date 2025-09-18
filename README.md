@@ -368,7 +368,7 @@
                     <button id="search-btn"><i class="fas fa-search"></i> 查询报告</button>
                     
                     <div class="example">
-                        <p>示例报告编号：<strong>BV2025TC106691805</strong>, REP-20230915-001, REP-20230918-045, REP-20230919-112</p>
+                        <p>示例报告编号：<strong>REP-20240919-001</strong>, REP-20250205-001, REP-20240928-045, REP-20230919-112</p>
                     </div>
                 </div>
                 
