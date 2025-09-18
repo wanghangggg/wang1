@@ -27,7 +27,7 @@
             border-radius: 15px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             overflow: hidden;
         }
         
@@ -169,6 +169,34 @@
             color: #333;
         }
         
+        .download-section {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .download-btn {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+        }
+        
+        .download-btn i {
+            margin-right: 10px;
+        }
+        
         .footer {
             text-align: center;
             padding: 20px;
@@ -236,7 +264,7 @@
                 </div>
                 
                 <div class="example">
-                    <p>示例报告编号：<strong>REP-20230915-001</strong>, <strong>REP-20230918-045</strong>, <strong>REP-20230919-112</strong></p>
+                    <p>示例报告编号：<strong>BV2025TC106691805</strong>, REP-20230915-001, REP-20230918-045, REP-20230919-112</p>
                 </div>
             </div>
             
@@ -245,23 +273,23 @@
                 <div class="report-details">
                     <div class="detail-item">
                         <h3>报告编号</h3>
-                        <p id="rep-number">REP-20230919-112</p>
+                        <p id="rep-number">-</p>
                     </div>
                     <div class="detail-item">
-                        <h3>报告类型</h3>
-                        <p id="rep-type">季度财务分析</p>
+                        <h3>委托单位</h3>
+                        <p id="rep-client">-</p>
                     </div>
                     <div class="detail-item">
-                        <h3>生成日期</h3>
-                        <p id="rep-date">2023-09-19</p>
+                        <h3>样品名称</h3>
+                        <p id="rep-sample">-</p>
                     </div>
                     <div class="detail-item">
-                        <h3>报告状态</h3>
-                        <p id="rep-status">已审核</p>
+                        <h3>报告日期</h3>
+                        <p id="rep-date">-</p>
                     </div>
                 </div>
-                <div style="margin-top: 25px; text-align: center;">
-                    <button style="border-radius: 8px; padding: 12px 30px;">
+                <div class="download-section">
+                    <button class="download-btn" id="download-btn">
                         <i class="fas fa-download"></i> 下载完整报告 (PDF)
                     </button>
                 </div>
@@ -269,7 +297,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2023 报告查询系统 | 技术支持: <a href="#">400-888-9999</a></p>
+            <p>© 2025报告查询系统 | 技术支持: <a href="#">400-888-9999</a></p>
         </div>
     </div>
 
@@ -278,26 +306,16 @@
             const searchBtn = document.getElementById('search-btn');
             const reportInput = document.getElementById('report-number');
             const resultsSection = document.getElementById('results');
+            const downloadBtn = document.getElementById('download-btn');
             
-            // 模拟报告数据
+            // 报告数据
             const reports = {
-                'REP-20230915-001': {
-                    number: 'REP-20230915-001',
-                    type: '年度审计报告',
-                    date: '2023-09-15',
-                    status: '已归档'
-                },
-                'REP-20230918-045': {
-                    number: 'REP-20230918-045',
-                    type: '市场调研分析',
-                    date: '2023-09-18',
-                    status: '已审核'
-                },
-                'REP-20230919-112': {
-                    number: 'REP-20230919-112',
-                    type: '季度财务分析',
-                    date: '2023-09-19',
-                    status: '已审核'
+                'BV2025TC106691805': {
+                    number: 'BV2025TC106691805',
+                    client: '河北省司法厅',
+                    sample: '国徽（行政执法、监督证）',
+                    date: '2025年09月18日',
+                    pdf: '国徽-行政执法、监督证.pdf'
                 }
             };
             
@@ -315,9 +333,9 @@
                 if (reports[reportId]) {
                     // 更新结果区域
                     document.getElementById('rep-number').textContent = reports[reportId].number;
-                    document.getElementById('rep-type').textContent = reports[reportId].type;
+                    document.getElementById('rep-client').textContent = reports[reportId].client;
+                    document.getElementById('rep-sample').textContent = reports[reportId].sample;
                     document.getElementById('rep-date').textContent = reports[reportId].date;
-                    document.getElementById('rep-status').textContent = reports[reportId].status;
                     
                     // 显示结果
                     resultsSection.style.display = 'block';
@@ -327,6 +345,20 @@
                 } else {
                     alert('未找到相关报告，请检查报告编号是否正确');
                     reportInput.focus();
+                }
+            });
+            
+            // 下载按钮点击事件
+            downloadBtn.addEventListener('click', function() {
+                const reportId = reportInput.value.trim();
+                if (reports[reportId]) {
+                    // 创建临时链接下载PDF
+                    const link = document.createElement('a');
+                    link.href = reports[reportId].pdf;
+                    link.download = reports[reportId].pdf;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                 }
             });
             
