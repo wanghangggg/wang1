@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Microsoft YaHei', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
@@ -20,228 +20,297 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            color: #333;
         }
         
         .container {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.97);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 900px;
+            max-width: 950px;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
         
         .header {
             background: linear-gradient(to right, #1a2980, #26d0ce);
             color: white;
-            padding: 30px 40px;
+            padding: 35px 40px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
         }
         
         .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-size: 2.6rem;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            position: relative;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.15rem;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+            max-width: 80%;
+            margin: 0 auto;
         }
         
         .content {
-            padding: 40px;
+            padding: 45px;
         }
         
         .search-section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         
         .input-group {
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 600;
-            color: #333;
-            font-size: 1.1rem;
+            color: #2c3e50;
+            font-size: 1.15rem;
         }
         
         .input-container {
             display: flex;
             width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
         }
         
         input[type="text"] {
             flex: 1;
-            padding: 15px 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px 0 0 8px;
+            padding: 18px 22px;
+            border: none;
+            background: #f9fafc;
             font-size: 1.1rem;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
+            color: #2c3e50;
         }
         
         input[type="text"]:focus {
-            border-color: #26d0ce;
+            background: #fff;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(38, 208, 206, 0.2);
+            box-shadow: inset 0 0 0 2px #26d0ce;
+        }
+        
+        input[type="text"]::placeholder {
+            color: #aab7c5;
         }
         
         button {
             background: linear-gradient(to right, #1a2980, #26d0ce);
             color: white;
             border: none;
-            padding: 0 30px;
-            border-radius: 0 8px 8px 0;
+            padding: 0 34px;
             cursor: pointer;
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         button:hover {
             background: linear-gradient(to right, #2234b8, #2de0de);
             transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        button:active {
+            transform: translateY(0);
         }
         
         button i {
-            margin-right: 8px;
+            margin-right: 10px;
         }
         
         .example {
-            background-color: #f8f9fa;
-            border-left: 4px solid #26d0ce;
-            padding: 15px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #1a2980;
+            padding: 18px;
             border-radius: 0 8px 8px 0;
-            margin-top: 15px;
+            margin-top: 18px;
         }
         
         .example p {
-            color: #666;
+            color: #4a6fa5;
             font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         .example strong {
             color: #1a2980;
+            font-weight: 700;
         }
         
         .results-section {
             display: none;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            border: 1px solid #eee;
+            background-color: #f8fafd;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 35px;
+            border: 1px solid #e1e8f0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .results-section h2 {
             color: #1a2980;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e6ecf5;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .results-section h2 i {
+            margin-right: 12px;
+            font-size: 1.4rem;
         }
         
         .report-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-bottom: 30px;
         }
         
         .detail-item {
-            padding: 15px;
+            padding: 20px;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 极 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #26d0ce;
+            transition: transform 0.3s;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
         }
         
         .detail-item h3 {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 5px;
+            font-size: 0.95rem;
+            color: #7b8a9b;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
         
         .detail-item p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
-            color: #333;
-极        }
+            color: #2c3e50;
+        }
         
         .download-section {
-            margin-top: 25px;
+            margin-top: 30px;
             text-align: center;
         }
         
         .download-btn {
-            background: linear-gradient(to right, #ff416极c, #ff4b2b);
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: white;
             border: none;
-            padding: 15px 40px;
-            border-radius: 8px;
+            padding: 18px 45px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.3);
         }
         
         .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
         }
         
         .download-btn i {
-            margin-right: 10px;
+            margin-right: 12px;
         }
         
         .download-options {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 25px;
+            padding: 20px;
             background-color: #e8f4fc;
-            border-radius: 8px;
+            border-radius: 10px;
             border-left: 4px solid #1a2980;
         }
         
-极        .download-options h3 {
+        .download-options h3 {
             color: #1a2980;
-            margin-bottom: 10极px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        
+        .download-options h3 i {
+            margin-right: 10px;
         }
         
         .option-item {
-            margin: 10px 0;
+            margin: 14px 0;
             display: flex;
             align-items: center;
         }
         
         .option-item input {
-            margin-right: 10px;
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .option-item label {
+            font-size: 1rem;
+            color: #2c3e50;
+            cursor: pointer;
         }
         
         .footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background-color: #f8f9fa;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid #eee;
-        }
-        
-        .footer a {
-            color: #26d0ce;
-            text-decoration: none;
-        }
-        
-        .footer a:hover {
-            text-decoration: underline;
+            color: #6c757d;
+            font-size: 0.95rem;
+            border-top: 1px solid #e9ecef;
         }
         
         .status-message {
-            padding: 15px;
+            padding: 16px;
             border-radius: 8px;
-            margin-top: 15px;
+            margin-top: 20px;
             display: none;
+            font-weight: 500;
         }
         
         .status-message.success {
@@ -258,38 +327,89 @@
             display: block;
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .header {
-                padding: 20px;
+                padding: 25px 20px;
             }
             
             .header h1 {
                 font-size: 2rem;
             }
             
+            .header p {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            
             .content {
-                padding: 20px;
+                padding: 25px 20px;
             }
             
             .input-container {
                 flex-direction: column;
+                box-shadow: none;
+                border-radius: 0;
             }
             
             input[type="text"] {
-                border-radius: 8px;
-                margin-bottom: 10px;
+                border-radius: 10px;
+                margin-bottom: 12px;
+                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
             }
             
             button {
-                border-radius: 8px;
-                padding: 15px;
+                border-radius: 10px;
+                padding: 16px;
+                width: 100%;
             }
+            
+            .report-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-section {
+                padding: 20px;
+            }
+            
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo-circle {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-circle i {
+            font-size: 32px;
+            background: linear-gradient(to right, #1a2980, #26d0ce);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="logo">
+                <div class="logo-circle">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+            </div>
             <h1><i class="fas fa-file-alt"></i> 报告查询系统</h1>
             <p>输入报告编号查询相关报告信息</p>
         </div>
@@ -299,7 +419,7 @@
                 <div class="input-group">
                     <div style="width: 100%;">
                         <label for="report-number">报告编号</label>
-                        <极div class="input-container">
+                        <div class="input-container">
                             <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
                             <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
                         </div>
@@ -312,7 +432,7 @@
             </div>
             
             <div class="results-section" id="results">
-                <h2><i class="fas fa-file-pdf"></极> 报告详情</h2>
+                <h2><i class="fas fa-file-pdf"></i> 报告详情</h2>
                 <div class="report-details">
                     <div class="detail-item">
                         <h3>报告编号</h3>
@@ -355,7 +475,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2025报告查询系统 | 技术支持: <a href="#">400-888-9999</a></p>
+            <p>© 2025 报告查询系统 | 专业技术检测服务</p>
         </div>
     </div>
 
@@ -400,7 +520,7 @@
                     // 更新结果区域
                     document.getElementById('rep-number').textContent = reports[reportId].number;
                     document.getElementById('rep-client').textContent = reports[reportId].client;
-                    document.getElementById('rep-sample').textContent = reports[report极Id].sample;
+                    document.getElementById('rep-sample').textContent = reports[reportId].sample;
                     document.getElementById('rep-date').textContent = reports[reportId].date;
                     
                     // 显示结果
@@ -468,7 +588,7 @@
                             <style>
                                 body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
                                 .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
-                                .content { margin: 20极 0; }
+                                .content { margin: 20px 0; }
                                 .section { margin-bottom: 20px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20px; }
@@ -481,12 +601,12 @@
                         <body>
                             <div class="header">
                                 <h1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</极p>
+                                <p>报告编号: ${reports[reportId].number}</p>
                                 <p>第1页共4页</p>
                             </div>
                             
                             <div class="content">
-                                <div class极="section">
+                                <div class="section">
                                     <h3>产品名称:识别卡(监督证)</h3>
                                     <h3>委托单位:河北省司法厅</h3>
                                     <h3>检验类别:委托检验</h3>
@@ -506,185 +626,43 @@
                             <div class="footer">
                                 <p>© 2025报告查询系统 | 本报告仅对来样负责</p>
                             </div>
-                            
-                            <div class="page-break"></div>
-                            
+                        </body>
+                        </html>
+                    `;
+                } else {
+                    content = `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>${reports[reportId].number}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; padding: 40px; }
+                                .header { text-align: center; margin-bottom: 30px; }
+                                .content { margin: 20px 0; }
+                                .section { margin-bottom: 20px; }
+                                .label { font-weight: bold; }
+                                .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; }
+                            </style>
+                        </head>
+                        <body>
                             <div class="header">
                                 <h1>检测报告</h1>
                                 <p>报告编号: ${reports[reportId].number}</p>
-                                <p>第2页共4页</p>
                             </div>
                             
                             <div class="content">
-                                <h2>检测报告</h2>
-                                
-                                <table>
-                                    <tr>
-                                        <th colspan="5">客户及样品信息</th>
-                                    </tr>
-                                    <tr>
-                                        <td rowspan="7">客户及样品信息</td>
-                                        <td>委托单位</td>
-                                        <td>河北省司法厅</td>
-                                        <td>河北省司法厅</td>
-                                        <td>河北省司法厅</td>
-                                    </tr>
-                                    <tr>
-                                        <td>委托单位地址</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                    </tr>
-                                    <tr>
-                                        <td>生产单位</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                    </极tr>
-                                    <tr>
-                                        <td>生产单位地址</td>
-                                        <td colspan="3"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>样品名称</td>
-                                        <td>国徽(行政执法)</td>
-                                        <td>商标</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>样品数量</极td>
-                                        <td>14p极cs</td>
-                                        <td>颜色</td>
-                                        <td>/</td>
-                                    </tr>
-                                    <tr>
-                                        <td>规格型号</td>
-                                        <td>/</td>
-                                        <td>产品等级</td>
-                                        <td>合格品</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检验类别</td>
-                                        <td>委托检验</td>
-                                        <极td>样品状态</td>
-                                        <td colspan="2">完好、无异常</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检验日期</td>
-                                        <td>2025年09月22日-2025年09月22日</td>
-                                        <td>收样日期</td>
-                                        <td colspan="2极">2025年08月02日</td>
-                                    </tr>
-                                    <tr>
-                                        <td>依据标准</td>
-                                        <td colspan="4">GB/T 14916-2022 《识别卡物理特性》 GB/T 17554.1-2006《识别卡测试方法第1部分一般特性测试》</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检测项目</td>
-                                        <td colspan="4">具体检测项见后续页。</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检验结论</td>
-                                        <td colspan="4">该送检样品经检测,所检项目符合要求。</td>
-                                    </tr>
-                                </table>
-                                
-                                <p>(检验章) 检测检验专用章 报告签发日期:2025年09月22日</p>
-                                <p>批准人:</p>
-                                <p>审核人:程志刚</p>
-                                <p>编制人:</p>
-                                
-                                <p>地址:广州市南沙区极东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village, Dongyong Town, Nansha District,Guangzhou.</极p>
-                                <p>如若对检测报告有异议，应于收到报告之日起15日内极向检测单位提出，逾期不予受理。</p>
-                            </div>
-                            
-                            <div class="footer">
-                                <p>© 2025报告查询系统 | 本报告仅对来样负责</p>
-                            </div>
-                            
-                            <div class="page-break"></div>
-                            
-                            <div class="header">
-                                <h1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</p>
-                                <p>第3页共4页</p>
-                            </div>
-                            
-                            <div class="content">
-                                <h2>检测报告</h2>
-                                
-                                <table>
-                                    <tr>
-                                        <th>序号</th>
-                                        <th>检测项目</th>
-                                        <th>主要技术/性能参数</th>
-                                        <th>检测结果</th>
-                                        <th>检测结论</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>全卡翘曲度</td>
-                                        <td>从水平刚性平台到ID-1规格卡凸起表面任何部分的最大距离(包括卡厚度)应不大于1.5mm</td>
-                                        <td>1.00mm</td>
-                                        <td>合格</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>剥离强度</td>
-                                        <td>≥0.35N/mm</td>
-                                        <td>0.67N/mm</td>
-                                        <td>合格极</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>抗热度</极td>
-                                        <td>在50℃士1℃、小于60%RH的温、湿度条件下暴露后不表现出偏差大于10mm、分层或褪色</td>
-                                        <td>符合</td>
-                                        <td>合格</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>粘连或并块</td>
-                                        <td>当成卡被堆积在一起时,卡不应显示出受到不利影响,例如不应出现:a)分层;b)褪色或色彩转移;c)表面光洁度的变化;d)从一张卡到另一张卡的物质转移;e)变形。卡应易于用手分开</td>
-                                        <td>符合</td>
-                                        <td>合格</td>
-                                    </tr>
-                                </table>
-                                
-                                <p style="text-align: center; margin-top: 30px;">***报告结束***</p>
-                                
-                                <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
-                                <p>如若对检测报告有异议,应于收到报告之日起15日内向检测单位提出,逾期不予受理。</p>
-                            </div>
-                            
-                            <div class="footer">
-                                <p>© 2025报告查询系统 | 本报告仅对来样负责极</p>
-                            </div>
-                            
-                            <div class="page-break"></div>
-                            
-                            <div class="header">
-                                <h极1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</p>
-                                <p>极第4页共4页</p>
-                            </div>
-                            
-                            <div class="content">
-                                <h2>注意事项</h2>
-                                
-                                <ol>
-                                    <li>报告无"检验检测专用章"或检验单位公章无效。</li>
-                                    <li>复制报告未重新加盖"检验检测专用章"或检验单位公章无效。</li>
-                                    <li>报告无编制、审核、批准人签字无效。</li>
-                                    <li>报告涂改无效检</li>
-                                    <li>对检验报告若有异议，应于收到报告之日起十五日内向检验单位提出，逾期不予受理。</li>
-                                    <li极>检验结果仅对来样负责。</li>
-                                    <li>对于送检样品，样品信息由委托方声称，本公司不对其真实性负责。</极li>
-                                    <li>除客户特别申明并支付样品管理费，所有样品超过规定的时效期均不再做留样。</li>
-                                </ol>
-                                
-                                <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village, Dongyong Town,Nansha District,Guangzhou.</p>
-                                <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
+                                <div class="section">
+                                    <span class="label">委托单位:</span> ${reports[reportId].client}
+                                </div>
+                                <div class="section">
+                                    <span class="label">样品名称:</span> ${reports[reportId].sample}
+                                </div>
+                                <div class="section">
+                                    <span class="label">报告日期:</span> ${reports[reportId].date}
+                                </div>
+                                <div class="section">
+                                    <span class="label">检测结果:</span> 样品经检测，所检项目符合要求。
+                                </div>
                             </div>
                             
                             <div class="footer">
@@ -693,116 +671,30 @@
                         </body>
                         </html>
                     `;
-                } else if (reportId === 'BV2025TC106691805') {
-                    content = `
-                        <!DOCTYPE html>
-                        <html>
-                        <head>
-                            <title>${reports[reportId].number}</title>
-                            <style>
-                                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-                                .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
-                                .content { margin: 20px 0; }
-                                .section { margin-bottom: 20px; }
-                                .label { font-weight: bold; }
-                                .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20极px; }
-                                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-                                th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-                                th { background-color: #f2f2f2; }
-                                .page-break { page-break-after: always; }
-                            </style>
-                        </head>
-                        <body>
-                            <div class="header">
-                                <h1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</p>
-                                <p>第1页共4页</p>
-                            </div>
-                            
-                            <div class="content">
-                                <div class="section">
-                                    <h3>产品名称:国徽(行政执法)</h3>
-                                    <h3>委托单位:河北省司法厅</h3>
-                                    <h3>检验类别:委托检验</h3>
-                                </div>
-                                
-                                <div class="section" style="text-align: center; margin-top: 50px;">
-                                    <h2>广州必维技术检测有限公司</h2>
-                                    <h3>Guangzhou BV Technology Testing Co.,Ltd</h3>
-                                </div>
-                                
-                                <div class="section" style="margin-top: 100px;">
-                                    <p>地址:广州市南沙区东涌极镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
-                                    <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
-                                </div>
-                            </div>
-                            
-                            <div class="footer">
-                                <p>© 2025报告查询系统 | 本报告仅对来样负责</p>
-                            </div>
-                            
-                            <div class="page-break"></div>
-                            
-                            <div class="header">
-                                <h1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</p>
-                                <p>第2页共4极页</p>
-                            </div>
-                            
-                            <div class="content">
-                                <h2>检测报告</h2>
-                                
-                                <table>
-                                    <tr>
-                                        <th colspan="5">客户及样品信息</th>
-                                    </tr>
-                                    <tr>
-                                        <td rowspan="7">客户及样品信息</td>
-                                        <td>委托单位</td>
-                                        <td>河北省司法厅</td>
-                                        <td>河北省司法厅</td>
-                                        <td>河北省司法厅</td>
-                                    </tr>
-                                    <tr>
-                                        <td>委托单位地址</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                    </tr>
-                                    <tr>
-                                        <td>生产单位</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                        <td>/</td>
-                                    </tr>
-                                    <tr>
-                                        <td>生产单位地址</td>
-                                        <td colspan="3"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>样品名称</td>
-                                        <td>国徽(行政执法)</td>
-                                        <td>商标</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>样品数量</td>
-                                        <td>3pcs</td>
-                                        <td>颜色</td>
-                                        <td>/</td>
-                                    </tr>
-                                    <tr>
-                                        <td>规格型号</td>
-                                        <td>/</td>
-                                        <td>产品等级</td>
-                                        <td>合格品</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检验类别</td>
-                                        <td>委托检验</td>
-                                        <td>样品状态</td>
-                                        <td colspan="2">完好、无异常</td>
-                                    </tr>
-                                    <tr>
-                                        <td>检验日期</td>
-                                        <td>2025年09月11日-2025年09月17日
+                }
+                
+                pdfWindow.document.write(content);
+                pdfWindow.document.close();
+                
+                // 给页面一些时间加载然后打印
+                setTimeout(() => {
+                    pdfWindow.print();
+                }, 500);
+            }
+            
+            // 显示状态消息
+            function showStatus(message, type) {
+                statusMessage.textContent = message;
+                statusMessage.className = 'status-message ' + type;
+            }
+            
+            // 按Enter键触发查询
+            reportInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
