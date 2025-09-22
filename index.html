@@ -93,7 +93,7 @@
         input[type="text"]:focus {
             background: #fff;
             outline: none;
-            box-shadow: inset 0 0 0 2px #26d0ce;
+            box-shadow: inset 0 0 0 2极px #26d0ce;
         }
         
         input[type="text"]::placeholder {
@@ -108,7 +108,7 @@
             cursor: pointer;
             font-size: 1rem;
             font-weight: 600;
-            transition: all 极.3s;
+            transition: all 0.3s;
         }
         
         button:hover {
@@ -159,48 +159,13 @@
         
         .detail-item h3 {
             font-size: 0.9rem;
-            color: #7b8a极b;
+            color: #7b8a9b;
             margin-bottom: 8px;
         }
         
         .detail-item p {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #2c3e50;
-        }
-        
-        .download-options {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #e8f4fc;
-            border-radius: 8px;
-            border-left: 4px solid #1a2980;
-        }
-        
-        .download-options h3 {
-            color: #1a2980;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-        }
-        
-        .download-options h3 i {
-            margin-right: 8px;
-        }
-        
-        .option-item {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .option-item input {
-            margin-right: 10px;
-        }
-        
-        .option-item label {
-            font-size: 0.95rem;
             color: #2c3e50;
         }
         
@@ -229,7 +194,7 @@
             box-shadow: 0 6px 15px rgba(255, 75, 43, 0.4);
         }
         
-极        .download-btn i {
+        .download-btn i {
             margin-right: 10px;
         }
         
@@ -259,7 +224,7 @@
         .status-message.error {
             background-color: #f8d7da;
             color: #721c24;
-            border: 极px solid #f5c6cb;
+            border: 1px solid #f5c6cb;
         }
         
         @media (max-width: 768px) {
@@ -280,7 +245,7 @@
                 box-shadow: none;
             }
             
-            input[type="text"] {
+            input[type="极text"] {
                 border-radius: 8px;
                 margin-bottom: 10px;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -308,7 +273,7 @@
         
         .support-info {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 15px;
             background-color: #f0f7ff;
             border-radius: 8px;
@@ -318,15 +283,6 @@
         .support-info p {
             color: #4a6fa5;
             font-size: 0.95rem;
-        }
-        
-        .search-label {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            display: block;
-            text-align: center;
         }
     </style>
 </head>
@@ -339,10 +295,12 @@
         
         <div class="content">
             <div class="search-section">
-                <span class="search-label">输入报告编号</span>
-                <div class="input-container">
-                    <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
-                    <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
+                <div class="input-group">
+                    <label for="report-number">输入报告编号</label>
+                    <div class="input-container">
+                        <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
+                        <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
+                    </div>
                 </div>
             </div>
             
@@ -362,26 +320,14 @@
                         <p id="rep-sample">-</p>
                     </div>
                     <div class="detail-item">
-                        <h3>报告日期极</h3>
-                        <p id="rep-date">-</极p>
-                    </div>
-                </div>
-                
-                <div class="download-options">
-                    <h3><i class="fas fa-download"></i> 下载选项</h3>
-                    <div class="option-item">
-                        <input type="radio" id="option-server" name="download-option" value="server" checked>
-                        <label for="option-server">从服务器下载（需要正确配置PDF文件路径）</label>
-                    </div>
-                    <div class="option-item">
-                        <input type="radio" id="option-browser" name="download-option" value="browser">
-                        <label for="option-browser">使用浏览器生成PDF（无需服务器文件）</label>
+                        <h3>报告日期</h3>
+                        <p id="rep-date">-</p>
                     </div>
                 </div>
                 
                 <div class="download-section">
                     <button class="download-btn" id="download-btn">
-                        <i class="fas fa-download"></i> 下载完整报告 (PDF)
+                        <i class="fas fa-download"></极i> 下载完整报告 (PDF)
                     </button>
                 </div>
                 
@@ -412,15 +358,13 @@
                     number: 'BV2025TC106691805',
                     client: '河北省司法厅',
                     sample: '国徽（行政执法、监督证）',
-                    date: '2025年09月18日',
-                    pdf: '国徽-行政执法、监督证.pdf'
+                    date: '2025年09月18日'
                 },
                 'BV2025TC106691956': {
                     number: 'BV2025TC106691956',
                     client: '河北省司法厅',
                     sample: '识别卡(监督证)',
-                    date: '2025年09月22日',
-                    pdf: '识别卡-监督证.pdf'
+                    date: '2025年09月22日'
                 }
             };
             
@@ -448,7 +392,7 @@
                     // 滚动到结果区域
                     resultsSection.scrollIntoView({ behavior: 'smooth' });
                     
-                    showStatus('找到报告，请选择下载选项', 'success');
+                    showStatus('找到报告，点击下载按钮生成PDF', 'success');
                 } else {
                     showStatus('未找到相关报告，请检查报告编号是否正确', 'error');
                     reportInput.focus();
@@ -458,35 +402,15 @@
             // 下载按钮点击事件
             downloadBtn.addEventListener('click', function() {
                 const reportId = reportInput.value.trim();
-                const downloadOption = document.querySelector('input[name="download-option"]:checked').value;
                 
-                if (!reports[report极Id]) {
+                if (!reports[reportId]) {
                     showStatus('请先查询有效的报告', 'error');
                     return;
                 }
                 
-                if (downloadOption === 'server') {
-                    // 从服务器下载PDF
-                    const pdfUrl = reports[reportId].pdf;
-                    
-                    // 创建临时链接下载PDF
-                    const link = document.createElement('a');
-                    link.href = pdfUrl;
-                    link.download = reports[reportId].pdf;
-                    document.body.appendChild(link);
-                    
-                    // 模拟点击
-                    link.click();
-                    
-                    // 移除链接
-                    document.body.removeChild(link);
-                    
-                    showStatus('正在从服务器下载PDF文件...', 'success');
-                } else {
-                    // 使用浏览器生成PDF
-                    generatePDF(reportId);
-                    showStatus('正在生成PDF文件...', 'success');
-                }
+                // 使用浏览器生成PDF
+                generatePDF(reportId);
+                showStatus('正在生成PDF文件...', 'success');
             });
             
             // 生成PDF函数
@@ -505,18 +429,23 @@
                         <head>
                             <title>${reports[reportId].number}</title>
                             <style>
-                                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6极; }
+                                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
                                 .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
                                 .content { margin: 20px 0; }
                                 .section { margin-bottom: 20px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20px; }
+                                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                                th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+                                th { background-color: #f2f2f2; }
+                                .page-break { page-break-after: always; }
                             </style>
                         </head>
                         <body>
-                            <div class极="header">
+                            <div class="header">
                                 <h1>检测报告</h1>
                                 <p>报告编号: ${reports[reportId].number}</p>
+                                <p>第1页共4页</p>
                             </div>
                             
                             <div class="content">
@@ -527,18 +456,18 @@
                                 </div>
                                 
                                 <div class="section" style="text-align: center; margin-top: 50px;">
-                                    <h2>广州必维技术检测有限公司</h2>
+                                    <h极2>广州必维技术检测有限公司</h2>
                                     <h3>Guangzhou BV Technology Testing Co.,Ltd</h3>
-                                </极div>
+                                </div>
                                 
-                                <div class="section" style="margin极-top: 100px;">
+                                <div class="section" style="margin-top: 100px;">
                                     <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
                                     <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
                                 </div>
                             </div>
                             
                             <div class="footer">
-                                <p>© 2025报告查询系统 | 本报告仅对来样负责极</p>
+                                <p>© 2025报告查询系统 | 本报告仅对来样负责</p>
                             </div>
                         </body>
                         </html>
@@ -549,7 +478,7 @@
                         <html>
                         <head>
                             <title>${reports[reportId].number}</title>
-                           极<style>
+                            <style>
                                 body { font-family: Arial, sans-serif; padding: 40px; }
                                 .header { text-align: center; margin-bottom: 30px; }
                                 .content { margin: 20px 0; }
