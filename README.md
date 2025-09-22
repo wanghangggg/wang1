@@ -24,208 +24,196 @@
         }
         
         .container {
-            background-color: rgba(255, 255, 255, 0.97);
+            background-color: white;
             border-radius: 16px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 950px;
+            max-width: 900px;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
         
         .header {
             background: linear-gradient(to right, #1a2980, #26d0ce);
             color: white;
-            padding: 35px 40px;
+            padding: 30px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            transform: rotate(30deg);
         }
         
         .header h1 {
-            font-size: 2.6rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            position: relative;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .header p {
-            font-size: 1.15rem;
-            opacity: 0.95;
-            font-weight: 300;
-            position: relative;
-            max-width: 80%;
-            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
         
         .content {
-            padding: 45px;
+            padding: 30px;
         }
         
         .search-section {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         
         .input-group {
-            margin-bottom: 28px;
+            margin-bottom: 20px;
         }
         
         .input-group label {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 600;
             color: #2c3e50;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
         
         .input-container {
             display: flex;
             width: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
         input[type="text"] {
             flex: 1;
-            padding: 18px 22px;
+            padding: 15px 20px;
             border: none;
             background: #f9fafc;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+            font-size: 1rem;
             color: #2c3e50;
         }
         
         input[type="text"]:focus {
             background: #fff;
             outline: none;
-            box-shadow: inset 0 0 0 2px #26d0ce;
-        }
-        
-        input[type="text"]::placeholder {
-            color: #aab7c5;
         }
         
         button {
             background: linear-gradient(to right, #1a2980, #26d0ce);
             color: white;
             border: none;
-            padding: 0 34px;
+            padding: 0 25px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         button:hover {
             background: linear-gradient(to right, #2234b8, #2de0de);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        button:active {
-            transform: translateY(0);
         }
         
         button i {
-            margin-right: 10px;
+            margin-right: 8px;
         }
         
         .example {
             background-color: #f0f7ff;
-            border-left: 4px solid #1a2980;
-            padding: 18px;
-            border-radius: 0 8px 8px 0;
-            margin-top: 18px;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
         }
         
         .example p {
             color: #4a6fa5;
             font-size: 0.95rem;
-            line-height: 1.5;
         }
         
         .example strong {
             color: #1a2980;
-            font-weight: 700;
         }
         
         .results-section {
             display: none;
             background-color: #f8fafd;
             border-radius: 12px;
-            padding: 30px;
-            margin-top: 35px;
+            padding: 25px;
+            margin-top: 25px;
             border: 1px solid #e1e8f0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .results-section h2 {
             color: #1a2980;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 2px solid #e6ecf5;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
         }
         
         .results-section h2 i {
-            margin-right: 12px;
-            font-size: 1.4rem;
+            margin-right: 10px;
         }
         
         .report-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
         }
         
         .detail-item {
-            padding: 20px;
+            padding: 15px;
             background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             border-left: 4px solid #26d0ce;
-            transition: transform 0.3s;
-        }
-        
-        .detail-item:hover {
-            transform: translateY(-5px);
         }
         
         .detail-item h3 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #7b8a9b;
             margin-bottom: 8px;
-            font-weight: 500;
         }
         
         .detail-item p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: #2c3e50;
         }
         
+        .download-options {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            border-left: 4px solid #1a2980;
+        }
+        
+        .download-options h3 {
+            color: #1a2980;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .download-options h3 i {
+            margin-right: 8px;
+        }
+        
+        .option-item {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .option-item input {
+            margin-right: 10px;
+        }
+        
+        .option-item label {
+            font-size: 0.95rem;
+            color: #2c3e50;
+        }
+        
         .download-section {
-            margin-top: 30px;
+            margin-top: 20px;
             text-align: center;
         }
         
@@ -233,82 +221,39 @@
             background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: white;
             border: none;
-            padding: 18px 45px;
-            border-radius: 10px;
+            padding: 15px 35px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.3);
+            box-shadow: 0 4px 10px rgba(255, 75, 43, 0.3);
         }
         
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 75, 43, 0.4);
-        }
-        
-        .download-btn:active {
-            transform: translateY(0);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 75, 43, 0.4);
         }
         
         .download-btn i {
-            margin-right: 12px;
-        }
-        
-        .download-options {
-            margin-top: 25px;
-            padding: 20px;
-            background-color: #e8f4fc;
-            border-radius: 10px;
-            border-left: 4px solid #1a2980;
-        }
-        
-        .download-options h3 {
-            color: #1a2980;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-        }
-        
-        .download-options h3 i {
             margin-right: 10px;
-        }
-        
-        .option-item {
-            margin: 14px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .option-item input {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-        
-        .option-item label {
-            font-size: 1rem;
-            color: #2c3e50;
-            cursor: pointer;
         }
         
         .footer {
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             background-color: #f8f9fa;
             color: #6c757d;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border-top: 1px solid #e9ecef;
         }
         
         .status-message {
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
             display: none;
             font-weight: 500;
         }
@@ -317,49 +262,41 @@
             background-color: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
-            display: block;
         }
         
         .status-message.error {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-            display: block;
         }
         
         @media (max-width: 768px) {
             .header {
-                padding: 25px 20px;
+                padding: 20px;
             }
             
             .header h1 {
-                font-size: 2rem;
-            }
-            
-            .header p {
-                font-size: 1rem;
-                max-width: 100%;
+                font-size: 1.8rem;
             }
             
             .content {
-                padding: 25px 20px;
+                padding: 20px;
             }
             
             .input-container {
                 flex-direction: column;
                 box-shadow: none;
-                border-radius: 0;
             }
             
             input[type="text"] {
-                border-radius: 10px;
-                margin-bottom: 12px;
-                box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+                border-radius: 8px;
+                margin-bottom: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             }
             
             button {
-                border-radius: 10px;
-                padding: 16px;
+                border-radius: 8px;
+                padding: 12px;
                 width: 100%;
             }
             
@@ -376,40 +313,11 @@
                 justify-content: center;
             }
         }
-        
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-        
-        .logo-circle {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo-circle i {
-            font-size: 32px;
-            background: linear-gradient(to right, #1a2980, #26d0ce);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">
-                <div class="logo-circle">
-                    <i class="fas fa-file-pdf"></i>
-                </div>
-            </div>
             <h1><i class="fas fa-file-alt"></i> 报告查询系统</h1>
             <p>输入报告编号查询相关报告信息</p>
         </div>
@@ -417,17 +325,15 @@
         <div class="content">
             <div class="search-section">
                 <div class="input-group">
-                    <div style="width: 100%;">
-                        <label for="report-number">报告编号</label>
-                        <div class="input-container">
-                            <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
-                            <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
-                        </div>
+                    <label for="report-number">报告编号</label>
+                    <div class="input-container">
+                        <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
+                        <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
                     </div>
                 </div>
                 
                 <div class="example">
-                    <p>示例报告编号：<strong>BV2025TC106691805</strong>, <strong>BV2025TC106691956</strong>, REP-20230915-001, REP-20230918-045, REP-20230919-112</p>
+                    <p>示例报告编号：<strong>BV2025TC106691805</strong>, <strong>BV2025TC106691956</strong></p>
                 </div>
             </div>
             
@@ -490,7 +396,7 @@
             // 报告数据
             const reports = {
                 'BV2025TC106691805': {
-                    number: 'BV2025TC106691805',
+                    number: 'BV202极5TC106691805',
                     client: '河北省司法厅',
                     sample: '国徽（行政执法、监督证）',
                     date: '2025年09月18日',
@@ -587,22 +493,17 @@
                             <title>${reports[reportId].number}</title>
                             <style>
                                 body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-                                .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
+                                .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding极-bottom: 20px; }
                                 .content { margin: 20px 0; }
                                 .section { margin-bottom: 20px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20px; }
-                                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-                                th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-                                th { background-color: #f2f2f2; }
-                                .page-break { page-break-after: always; }
                             </style>
                         </head>
                         <body>
                             <div class="header">
                                 <h1>检测报告</h1>
                                 <p>报告编号: ${reports[reportId].number}</p>
-                                <p>第1页共4页</p>
                             </div>
                             
                             <div class="content">
@@ -619,7 +520,7 @@
                                 
                                 <div class="section" style="margin-top: 100px;">
                                     <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
-                                    <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
+                                    <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</极p>
                                 </div>
                             </div>
                             
@@ -638,8 +539,8 @@
                             <style>
                                 body { font-family: Arial, sans-serif; padding: 40px; }
                                 .header { text-align: center; margin-bottom: 30px; }
-                                .content { margin: 20px 0; }
-                                .section { margin-bottom: 20px; }
+                                .content { margin: 极20px 0; }
+                                .section { margin-bottom: 20极px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; }
                             </style>
@@ -686,6 +587,7 @@
             function showStatus(message, type) {
                 statusMessage.textContent = message;
                 statusMessage.className = 'status-message ' + type;
+                statusMessage.style.display = 'block';
             }
             
             // 按Enter键触发查询
