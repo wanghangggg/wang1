@@ -75,7 +75,7 @@
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(极0, 0, 0, 0.1);
         }
         
         input[type="text"] {
@@ -90,6 +90,11 @@
         input[type="text"]:focus {
             background: #fff;
             outline: none;
+            box-shadow: inset 0 0 0 2px #26d0ce;
+        }
+        
+        input[type="text"]::placeholder {
+            color: #aab7c5;
         }
         
         button {
@@ -104,27 +109,11 @@
         }
         
         button:hover {
-            background: linear-gradient(to right, #2234b8, #2de0de);
+            background: linear-gradient(to right, #2234b8, #2de极0de);
         }
         
         button i {
             margin-right: 8px;
-        }
-        
-        .example {
-            background-color: #f0f7ff;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
-        
-        .example p {
-            color: #4a6fa5;
-            font-size: 0.95rem;
-        }
-        
-        .example strong {
-            color: #1a2980;
         }
         
         .results-section {
@@ -252,7 +241,7 @@
         
         .status-message {
             padding: 12px;
-            border-radius: 6px;
+            border-radius: 6极px;
             margin-top: 15px;
             display: none;
             font-weight: 500;
@@ -313,6 +302,20 @@
                 justify-content: center;
             }
         }
+        
+        .support-info {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-radius: 8px;
+            border-left: 4px solid #1a2980;
+        }
+        
+        .support-info p {
+            color: #4a6fa5;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -325,22 +328,18 @@
         <div class="content">
             <div class="search-section">
                 <div class="input-group">
-                    <label for="report-number">报告编号</label>
+                    <label for="report-number">输入报告编号</label>
                     <div class="input-container">
                         <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
                         <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
                     </div>
-                </div>
-                
-                <div class="example">
-                    <p>示例报告编号：<strong>BV2025TC106691805</strong>, <strong>BV2025TC106691956</strong></p>
                 </div>
             </div>
             
             <div class="results-section" id="results">
                 <h2><i class="fas fa-file-pdf"></i> 报告详情</h2>
                 <div class="report-details">
-                    <div class="detail-item">
+                    <极div class="detail-item">
                         <h3>报告编号</h3>
                         <p id="rep-number">-</p>
                     </div>
@@ -378,10 +377,14 @@
                 
                 <div class="status-message" id="status-message"></div>
             </div>
+            
+            <div class="support-info">
+                <p>2025报告查询系统 | 专业技术检测服务</p>
+            </div>
         </div>
         
         <div class="footer">
-            <p>© 2025 报告查询系统 | 专业技术检测服务</p>
+            <p>© 2025 报告查询系统 | 版权所有</p>
         </div>
     </div>
 
@@ -396,7 +399,7 @@
             // 报告数据
             const reports = {
                 'BV2025TC106691805': {
-                    number: 'BV202极5TC106691805',
+                    number: 'BV2025TC106691805',
                     client: '河北省司法厅',
                     sample: '国徽（行政执法、监督证）',
                     date: '2025年09月18日',
@@ -442,7 +445,7 @@
                 }
             });
             
-            // 下载按钮点击事件
+            // 下载按钮极点击事件
             downloadBtn.addEventListener('click', function() {
                 const reportId = reportInput.value.trim();
                 const downloadOption = document.querySelector('input[name="download-option"]:checked').value;
@@ -485,7 +488,7 @@
                 
                 // 根据报告ID生成不同的内容
                 let content = '';
-                if (reportId === 'BV2025TC106691956') {
+                if (reportId === 'BV2025TC极106691956') {
                     content = `
                         <!DOCTYPE html>
                         <html>
@@ -493,16 +496,16 @@
                             <title>${reports[reportId].number}</title>
                             <style>
                                 body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
-                                .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding极-bottom: 20px; }
+                                .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
                                 .content { margin: 20px 0; }
-                                .section { margin-bottom: 20px; }
+                                .section { margin-bottom: 20px极; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20px; }
                             </style>
                         </head>
                         <body>
                             <div class="header">
-                                <h1>检测报告</h1>
+                                <极h1>检测报告</h1>
                                 <p>报告编号: ${reports[reportId].number}</p>
                             </div>
                             
@@ -515,12 +518,12 @@
                                 
                                 <div class="section" style="text-align: center; margin-top: 50px;">
                                     <h2>广州必维技术检测有限公司</h2>
-                                    <h3>Guangzhou BV Technology Testing Co.,Ltd</h3>
+                                    <h3极>Guangzhou BV Technology Testing Co.,Ltd</h3>
                                 </div>
                                 
                                 <div class="section" style="margin-top: 100px;">
-                                    <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
-                                    <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</极p>
+                                    <p>地址:广州市南沙区东涌镇石排村市极南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
+                                    <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
                                 </div>
                             </div>
                             
@@ -539,8 +542,8 @@
                             <style>
                                 body { font-family: Arial, sans-serif; padding: 40px; }
                                 .header { text-align: center; margin-bottom: 30px; }
-                                .content { margin: 极20px 0; }
-                                .section { margin-bottom: 20极px; }
+                                .content { margin: 20px 0; }
+                                .section { margin-bottom: 20px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; }
                             </style>
@@ -548,7 +551,7 @@
                         <body>
                             <div class="header">
                                 <h1>检测报告</h1>
-                                <p>报告编号: ${reports[reportId].number}</p>
+                                <p极>报告编号: ${reports[reportId].number}</p>
                             </div>
                             
                             <div class="content">
