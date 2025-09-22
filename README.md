@@ -56,6 +56,7 @@
         
         .search-section {
             margin-bottom: 30px;
+            text-align: center;
         }
         
         .input-group {
@@ -75,7 +76,9 @@
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(极0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         input[type="text"] {
@@ -105,11 +108,11 @@
             cursor: pointer;
             font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 极.3s;
         }
         
         button:hover {
-            background: linear-gradient(to right, #2234b8, #2de极0de);
+            background: linear-gradient(to right, #2234b8, #2de0de);
         }
         
         button i {
@@ -156,7 +159,7 @@
         
         .detail-item h3 {
             font-size: 0.9rem;
-            color: #7b8a9b;
+            color: #7b8a极b;
             margin-bottom: 8px;
         }
         
@@ -226,7 +229,7 @@
             box-shadow: 0 6px 15px rgba(255, 75, 43, 0.4);
         }
         
-        .download-btn i {
+极        .download-btn i {
             margin-right: 10px;
         }
         
@@ -241,7 +244,7 @@
         
         .status-message {
             padding: 12px;
-            border-radius: 6极px;
+            border-radius: 6px;
             margin-top: 15px;
             display: none;
             font-weight: 500;
@@ -256,7 +259,7 @@
         .status-message.error {
             background-color: #f8d7da;
             color: #721c24;
-            border: 1px solid #f5c6cb;
+            border: 极px solid #f5c6cb;
         }
         
         @media (max-width: 768px) {
@@ -305,7 +308,7 @@
         
         .support-info {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
             padding: 15px;
             background-color: #f0f7ff;
             border-radius: 8px;
@@ -315,6 +318,15 @@
         .support-info p {
             color: #4a6fa5;
             font-size: 0.95rem;
+        }
+        
+        .search-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
         }
     </style>
 </head>
@@ -327,19 +339,17 @@
         
         <div class="content">
             <div class="search-section">
-                <div class="input-group">
-                    <label for="report-number">输入报告编号</label>
-                    <div class="input-container">
-                        <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
-                        <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
-                    </div>
+                <span class="search-label">输入报告编号</span>
+                <div class="input-container">
+                    <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
+                    <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
                 </div>
             </div>
             
             <div class="results-section" id="results">
                 <h2><i class="fas fa-file-pdf"></i> 报告详情</h2>
                 <div class="report-details">
-                    <极div class="detail-item">
+                    <div class="detail-item">
                         <h3>报告编号</h3>
                         <p id="rep-number">-</p>
                     </div>
@@ -352,8 +362,8 @@
                         <p id="rep-sample">-</p>
                     </div>
                     <div class="detail-item">
-                        <h3>报告日期</h3>
-                        <p id="rep-date">-</p>
+                        <h3>报告日期极</h3>
+                        <p id="rep-date">-</极p>
                     </div>
                 </div>
                 
@@ -445,12 +455,12 @@
                 }
             });
             
-            // 下载按钮极点击事件
+            // 下载按钮点击事件
             downloadBtn.addEventListener('click', function() {
                 const reportId = reportInput.value.trim();
                 const downloadOption = document.querySelector('input[name="download-option"]:checked').value;
                 
-                if (!reports[reportId]) {
+                if (!reports[report极Id]) {
                     showStatus('请先查询有效的报告', 'error');
                     return;
                 }
@@ -488,24 +498,24 @@
                 
                 // 根据报告ID生成不同的内容
                 let content = '';
-                if (reportId === 'BV2025TC极106691956') {
+                if (reportId === 'BV2025TC106691956') {
                     content = `
                         <!DOCTYPE html>
                         <html>
                         <head>
                             <title>${reports[reportId].number}</title>
                             <style>
-                                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+                                body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6极; }
                                 .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
                                 .content { margin: 20px 0; }
-                                .section { margin-bottom: 20px极; }
+                                .section { margin-bottom: 20px; }
                                 .label { font-weight: bold; }
                                 .footer { margin-top: 50px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #333; padding-top: 20px; }
                             </style>
                         </head>
                         <body>
-                            <div class="header">
-                                <极h1>检测报告</h1>
+                            <div class极="header">
+                                <h1>检测报告</h1>
                                 <p>报告编号: ${reports[reportId].number}</p>
                             </div>
                             
@@ -518,17 +528,17 @@
                                 
                                 <div class="section" style="text-align: center; margin-top: 50px;">
                                     <h2>广州必维技术检测有限公司</h2>
-                                    <h3极>Guangzhou BV Technology Testing Co.,Ltd</h3>
-                                </div>
+                                    <h3>Guangzhou BV Technology Testing Co.,Ltd</h3>
+                                </极div>
                                 
-                                <div class="section" style="margin-top: 100px;">
-                                    <p>地址:广州市南沙区东涌镇石排村市极南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
+                                <div class="section" style="margin极-top: 100px;">
+                                    <p>地址:广州市南沙区东涌镇石排村市南公路183号东北侧首层/the first floor on the northeast side of No.183 Shinan Road, Shipai village,Dongyong Town,Nansha District,Guangzhou.</p>
                                     <p>如若对检测报告有异议，应于收到报告之日起15日内向检测单位提出，逾期不予受理。</p>
                                 </div>
                             </div>
                             
                             <div class="footer">
-                                <p>© 2025报告查询系统 | 本报告仅对来样负责</p>
+                                <p>© 2025报告查询系统 | 本报告仅对来样负责极</p>
                             </div>
                         </body>
                         </html>
@@ -539,7 +549,7 @@
                         <html>
                         <head>
                             <title>${reports[reportId].number}</title>
-                            <style>
+                           极<style>
                                 body { font-family: Arial, sans-serif; padding: 40px; }
                                 .header { text-align: center; margin-bottom: 30px; }
                                 .content { margin: 20px 0; }
@@ -551,7 +561,7 @@
                         <body>
                             <div class="header">
                                 <h1>检测报告</h1>
-                                <p极>报告编号: ${reports[reportId].number}</p>
+                                <p>报告编号: ${reports[reportId].number}</p>
                             </div>
                             
                             <div class="content">
