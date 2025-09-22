@@ -56,7 +56,6 @@
         
         .search-section {
             margin-bottom: 30px;
-            text-align: center;
         }
         
         .input-group {
@@ -76,9 +75,7 @@
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
         input[type="text"] {
@@ -134,8 +131,6 @@
             padding-bottom: 15px;
             border-bottom: 2px solid #e6ecf5;
             font-size: 1.5rem;
-            display: flex;
-            align-items: center;
         }
         
         .results-section h2 i {
@@ -175,7 +170,7 @@
         }
         
         .download-btn {
-            background: linear-gradient(to right, #ff416c, #ff4b极2b);
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: white;
             border: none;
             padding: 15px 35px;
@@ -191,7 +186,7 @@
         
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 极0 6px 15px rgba(255, 75, 43, 0.4);
+            box-shadow: 0 6px 15px rgba(255, 75, 43, 0.4);
         }
         
         .download-btn i {
@@ -212,7 +207,6 @@
             border-radius: 6px;
             margin-top: 15px;
             display: none;
-            font-weight: 500;
         }
         
         .status-message.success {
@@ -221,7 +215,7 @@
             border: 1px solid #c3e6cb;
         }
         
-        .status-message.error {
+极        .status-message.error {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
@@ -242,19 +236,16 @@
             
             .input-container {
                 flex-direction: column;
-                box-shadow: none;
             }
             
-            input[type="text"] {
+            input[type极="text"] {
                 border-radius: 8px;
                 margin-bottom: 10px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             }
             
             button {
                 border-radius: 8px;
-                padding: 12px;
-                width: 100%;
+                padding: 15px;
             }
             
             .report-details {
@@ -270,20 +261,6 @@
                 justify-content: center;
             }
         }
-        
-        .support-info {
-            text-align: center;
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #f0f7ff;
-            border-radius: 8px;
-            border-left: 4px solid #1a2980;
-        }
-        
-        .support-info p {
-            color: #4a6fa5;
-            font-size: 0.95rem;
-        }
     </style>
 </head>
 <body>
@@ -295,10 +272,12 @@
         
         <div class="content">
             <div class="search-section">
-                <span style="font-size: 1.2rem; font-weight: 600; color: #2c3e50; margin-bottom: 15px; display: block; text-align: center;">输入报告编号</span>
-                <div class="input-container">
-                    <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
-                    <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
+                <div class="input-group">
+                    <label for="report-number">报告编号</label>
+                    <div class="input-container">
+                        <input type="text" id="report-number" placeholder="请输入报告编号..." autocomplete="off">
+                        <button id="search-btn"><i class="fas fa-search"></i> 查询</button>
+                    </div>
                 </div>
             </div>
             
@@ -331,14 +310,10 @@
                 
                 <div class="status-message" id="status-message"></div>
             </div>
-            
-            <div class="support-info">
-                <p>2025报告查询系统 | 专业技术检测服务</p>
-            </div>
         </div>
         
         <div class="footer">
-            <p>© 2025 报告查询系统 | 版权所有</p>
+            <p>© 2025 报告查询系统 | 专业技术检测服务</p>
         </div>
     </div>
 
