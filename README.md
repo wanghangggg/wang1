@@ -210,15 +210,15 @@
         }
         
         .status-message.success {
-            background-color: 'd4edda';
-            color: '#155724';
-            border: 1px solid '#c3e6cb';
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
         }
         
         .status-message.error {
-            background-color: '#f8d7da';
-            color: '#721c24';
-            border: 1px solid '#f5c6cb';
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         
         @media (max-width: 768px) {
@@ -358,7 +358,7 @@
                     // 更新结果区域
                     document.getElementById('rep-number').textContent = reports[reportId].number;
                     document.getElementById('rep-client').textContent = reports[reportId].client;
-                    document.getElementById('rep-sample').textContent = reports[repId].sample;
+                    document.getElementById('rep-sample').textContent = reports[reportId].sample;
                     document.getElementById('rep-date').textContent = reports[reportId].date;
                     
                     // 显示结果
@@ -420,8 +420,6 @@
                     searchBtn.click();
                 }
             });
-            
-            // 已移除自动填充代码
         });
     </script>
 </body>
