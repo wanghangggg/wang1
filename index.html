@@ -215,7 +215,7 @@
             border: 1px solid #c3e6cb;
         }
         
-极        .status-message.error {
+        .status-message.error {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
@@ -238,7 +238,7 @@
                 flex-direction: column;
             }
             
-            input[type极="text"] {
+            input[type="text"] {
                 border-radius: 8px;
                 margin-bottom: 10px;
             }
@@ -325,7 +325,7 @@
             const downloadBtn = document.getElementById('download-btn');
             const statusMessage = document.getElementById('status-message');
             
-            // 报告数据
+            // 报告数据 - 根据提供的PDF文档信息更新
             const reports = {
                 'BV2025TC106691805': {
                     number: 'BV2025TC106691805',
@@ -390,6 +390,7 @@
                 const link = document.createElement('a');
                 link.href = pdfUrl;
                 link.download = reports[reportId].pdf;
+                link.target = '_blank'; // 在新标签页打开
                 document.body.appendChild(link);
                 
                 // 模拟点击
@@ -406,6 +407,11 @@
                 statusMessage.textContent = message;
                 statusMessage.className = 'status-message ' + type;
                 statusMessage.style.display = 'block';
+                
+                // 5秒后自动隐藏消息
+                setTimeout(() => {
+                    statusMessage.style.display = 'none';
+                }, 5000);
             }
             
             // 按Enter键触发查询
@@ -414,6 +420,9 @@
                     searchBtn.click();
                 }
             });
+            
+            // 示例：自动填充一个报告编号用于测试
+            reportInput.value = 'BV2025TC106691805';
         });
     </script>
 </body>
