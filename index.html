@@ -413,12 +413,6 @@
                     statusMessage.style.display = 'none';
                 }, 5000);
             }
-            
-            // 按Enter键触发查询
-            reportInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    searchBtn.click();
-                }
             });
         });
     </script>
